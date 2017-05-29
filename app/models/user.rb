@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def full_name
     profile.full_name
   end
+
+  has_many :rsvps, dependent: :destroy
+  has_many :rsvped_events, through: :rsvps, source: :event
+
 end

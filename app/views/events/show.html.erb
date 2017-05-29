@@ -1,3 +1,14 @@
+<!-- Rsvp form -->
+<% if current_user != @event.user %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Rsvp for this event</div>
+    <div class="panel-body">
+      <%= render 'rsvps/form' %>
+    </div>
+  </div>
+<% end %>
+
+
 <div class="panel panel-primary">
   <div class="panel-heading"><%= @event.name %></div>
 
