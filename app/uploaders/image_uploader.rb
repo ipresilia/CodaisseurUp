@@ -7,6 +7,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
 
+    version :thumbnail do
+      eager
+      resize_to_fit(300, 300)
+      cloudinary_transformation :quality => 80
+    end
+
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
