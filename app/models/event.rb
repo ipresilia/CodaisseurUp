@@ -6,6 +6,8 @@ class Event < ApplicationRecord
   validates :name, :starts_at, :ends_at, presence: true
 
   has_many :rsvps, dependent: :destroy
+
+  has_many :photos
   # validates :ends_at, presence: true #, #date: {after: :start_date}
 
 
